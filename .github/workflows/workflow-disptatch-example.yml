@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        default: Sveta
+        required: true
+        description: 'A name passed from the caller workflow' 
+  
+name: Print Stuff
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print the name
+        run: echo "Hi there, ${{ inputs.name }}"
+            
